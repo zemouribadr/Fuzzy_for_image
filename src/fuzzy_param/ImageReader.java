@@ -2,6 +2,7 @@ package fuzzy_param;
 
 import java.awt.Component;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -47,6 +48,14 @@ public class ImageReader extends Component {
 	      System.out.println("test");
 	      marchThroughImage(image);
 	      printPixelARGB(259);
+	      try {
+	    	    // retrieve image
+	    	    BufferedImage bi = image;
+	    	    File outputfile = new File("saved.jpg");
+	    	    ImageIO.write(bi, "jpg", outputfile);
+	    	} catch (IOException e) {
+	    		System.out.println(e);
+	    	}
 	    } catch (IOException e) {
 	      System.err.println(e.getMessage());
 	      
