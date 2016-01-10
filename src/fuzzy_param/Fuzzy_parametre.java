@@ -6,8 +6,15 @@ public class Fuzzy_parametre {
 	private static int draw_surface_height=500;
 	private static int draw_surface_width=500;
 	private static double epsilon=0.009;
+	private static int after_dot=2;
 	
 	
+	public static int getAfter_dot() {
+		return after_dot;
+	}
+	public static void setAfter_dot(int after_dot) {
+		Fuzzy_parametre.after_dot = after_dot;
+	}
 	public static double getEpsilon() {
 		return epsilon;
 	}

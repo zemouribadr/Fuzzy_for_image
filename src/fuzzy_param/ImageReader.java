@@ -7,10 +7,13 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import fuzzy.Fuzzy;
+
 public class ImageReader extends Component {
 	 
 	  public static void main(String[] foo) {
-	    new ImageReader();
+		  Fuzzy fuzzy=new Fuzzy("img.jpg");
+		  fuzzy.cendroid_converge();
 	  }
 	 
 	  public void printPixelARGB(int pixel) {
@@ -18,7 +21,7 @@ public class ImageReader extends Component {
 	    int red = (pixel >> 16) & 0xff;
 	    int green = (pixel >> 8) & 0xff;
 	    int blue = (pixel) & 0xff;
-	    System.out.println("argb: " + alpha + ", " + red + ", " + green + ", " + blue);
+	    System.out.println("argb: " + alpha + ", " + red + ", " + green + ", " + blue+", " + pixel);
 	  }
 	 
 	  private void marchThroughImage(BufferedImage image) {
@@ -37,14 +40,16 @@ public class ImageReader extends Component {
 	  }
 	 
 	  public ImageReader() {
-	    try {
+		  /*Fuzzy fuzzy=new Fuzzy("img.jpg");
+		  fuzzy.cendroid_converge();
+	    /*try {
 	      // get the BufferedImage, using the ImageIO class
 	      BufferedImage image = 
 	        ImageIO.read(this.getClass().getResource("img.jpg"));
 	      marchThroughImage(image);
 	      for(int i=1;i<=153;i++)
 	    	  for(int j=1;j<=177;j++)
-	      image.setRGB(i, j, 0);
+	      image.setRGB(i, j, 190+190*256+190*256*256);
 	      System.out.println("test");
 	      marchThroughImage(image);
 	      printPixelARGB(259);
@@ -59,7 +64,7 @@ public class ImageReader extends Component {
 	    } catch (IOException e) {
 	      System.err.println(e.getMessage());
 	      
-	    }
+	    }*/
 	  }
 	 
 	}
